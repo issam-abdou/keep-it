@@ -1,5 +1,7 @@
 import React from 'react'
 import FormMessage from './FormMessage'
+import { Link } from "react-router-dom";
+
 export default function Form(props) {
     return (
         <>
@@ -18,7 +20,10 @@ export default function Form(props) {
                     <span class="input-icon"><i class="fas fa-lock"></i></span>
                     <input type="password" name="password" id="password" placeholder="Password"/>
                 </div>
+                
+                <Link to="/user">
                 <button type="submit" class="btn">{props.type==="register"?"Register":"Login"}</button>
+                </Link>
                 <FormMessage type={props.type}/>
             </form>
         </>
