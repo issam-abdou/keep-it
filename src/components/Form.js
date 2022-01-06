@@ -1,31 +1,32 @@
 import React from 'react'
 import FormMessage from './FormMessage'
-import { Link } from "react-router-dom";
-
+import Button from './Button'
 export default function Form(props) {
     return (
         <>
             <h3>{props.type==="register"? "Hello!" : "Hello again!"}</h3>
-            <span class="register__msg">{props.type==="register"? "Sign Up To Get Started" : "Welcome back"}</span>
-            <form action="" class="register__form">
-                <div class="form-input" style={props.type==="register"?{display:"block"}:{display:"none"}}>
-                    <span class="input-icon"><i class="fas fa-user"></i></span>
+            <span className="register__msg">{props.type==="register"? "Sign Up To Get Started" : "Welcome back"}</span>
+            <form action="" className="register__form">
+                <div className="form-input" style={props.type==="register"?{display:"block"}:{display:"none"}}>
+                    <span className="input-icon"><i className="fas fa-user"></i></span>
                     <input type="text" name="name" id="name" placeholder="Name"/>
                 </div>
-                <div class="form-input">
-                    <span class="input-icon"><i class="far fa-envelope"></i></span>
+                <div className="form-input">
+                    <span className="input-icon"><i className="far fa-envelope"></i></span>
                     <input type="email" name="email" id="email" placeholder="Email addresse"/>    
                 </div>
-                <div class="form-input">
-                    <span class="input-icon"><i class="fas fa-lock"></i></span>
+                <div className="form-input">
+                    <span className="input-icon"><i className="fas fa-lock"></i></span>
                     <input type="password" name="password" id="password" placeholder="Password"/>
                 </div>
-                
-                <Link to="/user">
-                <button type="submit" class="btn">{props.type==="register"?"Register":"Login"}</button>
-                </Link>
-                <FormMessage type={props.type}/>
+                {/* <button type="submit" className='btn'>
+                <Link to="/user" className='btn' onClick={()=>{console.log('clicked ++++++++')}}>{props.type==="register"?"Register":"Login"}</Link>
+                </button> */}
+                {/* <Link to="/user" className='btn' onClick={()=>{console.log('clicked ++++++++')}}><button type="submit" className=''>{props.type==="register"?"Register":"Login"}</button></Link> */}
+                <Button type={props.type}/>
+                {/* <Link to="/user" className='btn' onClick={()=>{console.log('clicked ++++++++')}}>{props.type==="register"?"Register":"Login"}</Link> */}
             </form>
+            <FormMessage type={props.type}/>
         </>
         
     )

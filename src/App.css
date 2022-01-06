@@ -50,6 +50,9 @@ main{
     align-items: center;
     justify-content: center; */
 }
+.note-area .container {
+    height: calc(100vh - 72px);
+}
  main .logo{
     padding: 2rem 0;
     /* margin: auto; */
@@ -141,7 +144,7 @@ main{
 input::placeholder{
     color: rgba(51, 51, 51, 0.37);
 }
-.btn{
+.btn button{
     color: white;
     background-color: #FF6A3D;
     /* width: 19rem; */
@@ -149,11 +152,12 @@ input::placeholder{
     padding: 0.8rem;
     border-radius: 20px;
     cursor: pointer;
+    width: 100%;
 }
+
 .form-input{
     position: relative;
     margin-bottom: 0.7rem;
-    
 }
 .input-icon{
     position: absolute;
@@ -178,10 +182,10 @@ input::placeholder{
 /* ======== Animaiton ======== */
 @keyframes up_down {
     0%{
-        transform: translateY(-3%);
+        transform: translateY(-2%);
     }
     100%{
-        transform: translateY(+3%);
+        transform: translateY(+2%);
     }
 }
 
@@ -230,17 +234,7 @@ nav a .logo img{
   color: white;
   font-size: 14px;
 }
-/* ###### Note Area ###### */
-.note-area{
-    /* background-color: #EDE7EB; */
-    /* position: absolute;
-    top: 0;
-    height: 100vh;
-    z-index: -1;
-    padding-top: 105.938px; */
-    /* height: 100vh; */
-    /* height: calc(100vh - 109.938px); */
-}
+
 /* ###### Note Input ###### */
 .note-inputs{
     /* border:solid red 1px; */
@@ -320,7 +314,18 @@ nav a .logo img{
 .note__text p{
     font-size: 0.95rem;
 }
-
+.note__delete{
+    text-align: right;
+}
+.note__delete i{
+    margin-right: 0.2rem;
+    cursor: pointer;
+    color: #1A2238;
+    transform: 0.2s ease;
+}
+.note__delete i:hover{
+    color: rgb(192, 8, 8);
+}
 /* ######## NOTE GRID ######### */
 .note-grid{
     display: grid;
